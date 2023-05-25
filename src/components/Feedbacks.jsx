@@ -6,7 +6,6 @@ import { fadeIn, textVariant } from '../utils/motion';
 import { testimonials } from '../constants';
 
 const FeedbackCard = ({
-  key,
   index,
   testimonial,
   name,
