@@ -44,10 +44,12 @@ const About = () => {
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
         I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        JavaScript, and expertise in frameworks like{' '}
+        <strong>React.js, Node.js, Next.js, Nest.js Java, Python</strong> and{' '}
+        <strong>Three.js</strong>. I'm a quick learner and collaborate closely
+        with clients to create efficient, scalable, and user-friendly solutions
+        that solve real-world problems. Let's work together to bring your ideas
+        to life!
       </motion.p>
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (
