@@ -25,6 +25,16 @@ import meta from './company/meta.png';
 import shopify from './company/shopify.png';
 import starbucks from './company/starbucks.png';
 import tesla from './company/tesla.png';
+import acn from './company/acn.png';
+import multisys from './company/multisys.png';
+import sf from './company/sf.png';
+import ct from './company/ct.png';
+import bbm from './company/bbm.png';
+import jaq from './company/jaq.png';
+import ca from './company/ca.png';
+import inventiv from './company/inventiv.png';
+import latech from './company/latech.png';
+import so from './company/so.png';
 
 import carrent from './carrent.png';
 import jobit from './jobit.png';
@@ -109,4 +119,14 @@ export {
   swiftui,
   vscode,
   wordpress,
+  acn,
+  multisys,
+  sf,
+  ct,
+  bbm,
+  jaq,
+  ca,
+  so,
+  inventiv,
+  latech,
 };

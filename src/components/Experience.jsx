@@ -47,6 +47,22 @@ const ExperienceCard = ({ experience }) => {
           </li>
         ))}
       </ul>
+
+      <div className='mt-5'>
+        <p
+          className="text-secondary text-[16px] font-semibold"
+          style={{ margin: 0 }}
+        >
+          {experience.tech_stack_title}
+        </p>
+      </div>
+      <div className="flex flex-wrap gap-2 font-light"> 
+          <p
+            className="m-1 text-[12px]"
+          >
+            {experience.tech_stack_items}
+          </p>
+      </div>
     </VerticalTimelineElement>
   );
 };
