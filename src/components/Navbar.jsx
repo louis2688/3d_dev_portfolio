@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
+      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary bg-opacity-75`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
@@ -33,7 +33,7 @@ const Navbar = () => {
               key={link.id}
               className={`${
                 active === link.title ? 'text-white' : 'text-secondary'
-              } hover:text-white text=[18px] font-medium cursor-pointer`}
+              } hover:text-purple-400 text=[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
               <a href={`#${link.id}`}>{link.title}</a>
