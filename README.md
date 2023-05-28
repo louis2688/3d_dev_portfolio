@@ -1,2 +1,2 @@
 # 3d_dev_portfolio
-![Demo](http://full/path/to/img.jpg "Demo")
+![Demo](https://github.com/louis2688/3d_dev_portfolio/blob/main/src/assets/demo.png)
