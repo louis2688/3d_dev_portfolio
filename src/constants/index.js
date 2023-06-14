@@ -96,14 +96,6 @@ const services = [
 ];
 
 const technologies = [
-  // {
-  //   name: 'HTML 5',
-  //   icon: html,
-  // },
-  // {
-  //   name: 'CSS 3',
-  //   icon: css,
-  // },
   {
     name: 'JavaScript',
     icon: javascript,
@@ -116,10 +108,6 @@ const technologies = [
     name: 'React JS',
     icon: reactjs,
   },
-  // {
-  //   name: 'Redux Toolkit',
-  //   icon: redux,
-  // },
   {
     name: 'Tailwind CSS',
     icon: tailwind,
@@ -128,74 +116,18 @@ const technologies = [
     name: 'Node JS',
     icon: nodejs,
   },
-  // {
-  //   name: 'MongoDB',
-  //   icon: mongodb,
-  // },
   {
     name: 'Three JS',
     icon: threejs,
   },
-  // {
-  //   name: 'Github',
-  //   icon: git,
-  // },
-  // {
-  //   name: 'Figma',
-  //   icon: figma,
-  // },
-  // {
-  //   name: 'Docker',
-  //   icon: docker,
-  // },
   {
     name: 'Android ',
     icon: android,
   },
-  // {
-  //   name: 'Aws',
-  //   icon: aws,
-  // },
-  // {
-  //   name: 'Azure',
-  //   icon: azure,
-  // },
-  // {
-  //   name: 'Bootstrap',
-  //   icon: bootstrap,
-  // },
-  // {
-  //   name: 'Firebase',
-  //   icon: firebase,
-  // },
-  // {
-  //   name: 'Github',
-  //   icon: github,
-  // },
-  // {
-  //   name: 'Google Cloud',
-  //   icon: googlecloud,
-  // },
-  // {
-  //   name: 'Ios',
-  //   icon: ios,
-  // },
   {
     name: 'Java',
     icon: java,
   },
-  // {
-  //   name: 'Kotlin',
-  //   icon: kotlin,
-  // },
-  // {
-  //   name: 'Material UI',
-  //   icon: materialui,
-  // },
-  // {
-  //   name: 'Mysql',
-  //   icon: mysql,
-  // },
   {
     name: 'NestJS',
     icon: nestjs,
@@ -208,58 +140,15 @@ const technologies = [
     name: 'Postgres',
     icon: postgres,
   },
-  // {
-  //   name: 'PowerBI',
-  //   icon: powerbi,
-  // },
-  // {
-  //   name: 'Prisma',
-  //   icon: prisma,
-  // },
-  // {
-  //   name: 'Flutter',
-  //   icon: flutter,
-  // },
   {
     name: 'Python',
     icon: python,
   },
-  // {
-  //   name: 'Redux',
-  //   icon: redux,
-  // },
-  // {
-  //   name: 'Shopify',
-  //   icon: shopify,
-  // },
-  // {
-  //   name: 'Styled Component',
-  //   icon: styledcomponent,
-  // },
-  // {
-  //   name: 'Svelte',
-  //   icon: svelte,
-  // },
-  // {
-  //   name: 'Swagger',
-  //   icon: swagger,
-  // },
+
   {
     name: 'SwiftUI',
     icon: swiftui,
   },
-  // {
-  //   name: 'Vscode',
-  //   icon: vscode,
-  // },
-  // {
-  //   name: 'Wordpress',
-  //   icon: wordpress,
-  // },
-  // {
-  //   name: 'AdobeXD',
-  //   icon: adobexd,
-  // },
 ];
 
 const experiences = [
