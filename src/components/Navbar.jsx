@@ -28,7 +28,7 @@ const Navbar = () => {
           </p>
           
         </Link>
-        <img src={mindshift} alt="mindshift" className="h-9 object-contain" />
+        {/* <img src={mindshift} alt="mindshift" className="h-9 object-contain" /> */}
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
