@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styles } from '../styles';
 import { navLinks } from '../constants';
-import { logo, menu, close, mindshift } from '../assets';
+import { logo, menu, close } from '../assets';
 
 const Navbar = () => {
   const [active, setActive] = useState('');
@@ -28,7 +28,6 @@ const Navbar = () => {
           </p>
           
         </Link>
-        {/* <img src={mindshift} alt="mindshift" className="h-9 object-contain" /> */}
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
