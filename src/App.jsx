@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { useState } from 'react';
 import {
   About,
   Contact,
@@ -8,30 +8,44 @@ import {
   Navbar,
   Tech,
   Works,
-  StarsCanvas,
+  Cursor,
+  Preloader,
+  SmoothScroll,
+  Marquee,
+  Footer,
 } from './components';
 
 const App = () => {
+  const [ready, setReady] = useState(false);
+
   return (
-    <BrowserRouter>
+    <SmoothScroll>
+      <Cursor />
+      {!ready && <Preloader onDone={() => setReady(true)} />}
+
       <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-        {/* <div className="bg-cover bg-no-repeat bg-center"> */}
-          {/* <StarsCanvas /> */}
+        {/* Ambient fixed background — pure CSS (no extra WebGL context) */}
+        <div className="pointer-events-none fixed inset-0 z-0">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(124,92,255,0.10),transparent_55%)]" />
+          <div className="absolute inset-0 bg-grid-faint [background-size:60px_60px] opacity-[0.30]" />
+          <div className="starfield absolute inset-0 opacity-70" />
+        </div>
+
+        {/* Foreground content */}
+        <div className="relative z-10">
           <Navbar />
           <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className="relative z-0">
+          <About />
+          <Marquee />
+          <Experience />
+          <Tech />
+          <Works />
+          <Feedbacks />
           <Contact />
-          <StarsCanvas />
+          <Footer />
         </div>
       </div>
-    </BrowserRouter>
+    </SmoothScroll>
   );
 };
 

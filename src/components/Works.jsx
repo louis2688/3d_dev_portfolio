@@ -1,96 +1,94 @@
-import React from "react";
-import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { github } from "../assets";
-import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
+import React from 'react';
+import { styles } from '../styles';
+import { github } from '../assets';
+import { SectionWrapper } from '../hoc';
+import { projects } from '../constants';
+import SplitHeading from './anim/SplitHeading';
+import Reveal from './anim/Reveal';
 
-const ProjectCard = ({
-  name,
-  description,
-  tags,
-  image,
-  source_code_link,
-  index,
-}) => {
+const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
+  const onMove = (e) => {
+    const el = e.currentTarget;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `perspective(1000px) rotateY(${x * 7}deg) rotateX(${
+      -y * 7
+    }deg)`;
+  };
+  const reset = (e) => {
+    e.currentTarget.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
+  };
+
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
-      >
-        <div className="relative w-full h-[230px]">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-full object-cover rounded-2xl"
-          />
+    <div
+      data-cursor
+      onMouseMove={onMove}
+      onMouseLeave={reset}
+      className="border-gradient glass group w-full overflow-hidden rounded-3xl p-4 transition-[transform,box-shadow] duration-200 ease-out hover:shadow-card sm:w-[360px]"
+    >
+      <div className="relative h-[220px] w-full overflow-hidden rounded-2xl">
+        <img
+          src={image}
+          alt={name}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+        <button
+          onClick={() => window.open(source_code_link, '_blank')}
+          className="glass-strong absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full transition-transform hover:scale-110"
+        >
+          <img src={github} alt="source" className="h-1/2 w-1/2 object-contain" />
+        </button>
+      </div>
 
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
-            </div>
-          </div>
-        </div>
+      <div className="mt-5 px-1">
+        <h3 className="font-display text-[22px] font-bold text-white">{name}</h3>
+        <p className="mt-2 text-[14px] leading-relaxed text-secondary">
+          {description}
+        </p>
+      </div>
 
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
-        </div>
-
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-              #{tag.name}
-            </p>
-          ))}
-        </div>
-      </Tilt>
-    </motion.div>
+      <div className="mt-4 flex flex-wrap gap-2 px-1 pb-1">
+        {tags.map((tag) => (
+          <span
+            key={tag.name}
+            className={`font-mono text-[13px] ${tag.color}`}
+          >
+            #{tag.name}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 };
 
 const Works = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>My Work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
-      </motion.div>
+      <p className={styles.sectionSubText}>My work</p>
+      <SplitHeading as="h2" className={`${styles.sectionHeadText} mt-3`}>
+        Selected Projects.
+      </SplitHeading>
 
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-5xl leading-[30px]"
-        >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
-        </motion.p>
-      </div>
+      <Reveal
+        as="p"
+        className="mt-5 max-w-3xl text-[17px] leading-[30px] text-secondary"
+      >
+        A selection of projects that showcase my ability to solve complex
+        problems, work across technologies, and ship polished products — each
+        linked to its source.
+      </Reveal>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <Reveal className="mt-20 flex flex-wrap gap-7" stagger={0.15} y={60}>
         {projects.map((project, index) => (
-          <ProjectCard key={`project=${index}`} index={index} {...project} />
+          <ProjectCard key={`project-${index}`} {...project} />
         ))}
-      </div>
+      </Reveal>
     </>
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, '');

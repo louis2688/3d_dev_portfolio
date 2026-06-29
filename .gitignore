@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Local agent / tooling
+.claude/
+.supermemory/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
