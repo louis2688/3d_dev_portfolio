@@ -3,5 +3,12 @@
   "framework": "vite",
   "buildCommand": "vite build",
   "outputDirectory": "dist",
-  "installCommand": "npm install --legacy-peer-deps"
+  "installCommand": "npm install --legacy-peer-deps",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://www.louismadrigal.com/",
+      "permanent": true
+    }
+  ]
 }
